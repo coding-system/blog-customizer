@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import clsx from 'clsx';
 import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 import { Select } from 'src/ui/select';
@@ -60,9 +61,7 @@ export const ArticleParamsForm = ({
 		<>
 			<ArrowButton isOpen={isOpen} onClick={handleArrowClick} />
 			<aside
-				className={`${styles.container} ${
-					isOpen ? styles.container_open : ''
-				}`}>
+				className={clsx(styles.container, { [styles.container_open]: isOpen })}>
 				<form
 					ref={formRef}
 					className={styles.form}
